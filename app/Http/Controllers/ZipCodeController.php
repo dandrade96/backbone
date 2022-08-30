@@ -9,8 +9,6 @@ use Illuminate\Http\Client\ConnectionException;
 class ZipCodeController extends Controller
 {
     public function index(Request $request){
-        $promise = Http::get('https://jobs.backbonesystems.io/api/zip-codes/'.$request->zip_code);
-
-        return $promise->json();
+        return $promise = Http::get('https://jobs.backbonesystems.io/api/zip-codes/'.$request->zip_code);
     }
 }
